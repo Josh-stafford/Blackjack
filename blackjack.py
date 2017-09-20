@@ -48,7 +48,11 @@ def Deal():
     if cardVal > 10 or cardVal == 1:
         cardVal = 11
     if cardNum/13 >= 1:
-        suit = suits[floor(cardNum/13)]
+        if cardNum >=52:
+            cardVal = 11
+            suit = "Clubs"
+        else:
+            suit = suits[floor(cardNum/13)]
     else:
         suit = suits[0]
     card = [cardNum, cardVal, suit]
@@ -88,6 +92,8 @@ def finish(name):
         print("_____________________\n\n")
     else:
         print(pName + " wins with a score of", name.score)
+        if pName == players[1].name:
+            print(players[0].name + " ended with a score of", players[0].score)
     if players[1].score > players[0].score and players[1].score <=21 or players[0].score > 21:
         players[1].currency = players[1].currency + bet*2
         print("Your balance is now", players[1].currency, "credits.")
