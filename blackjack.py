@@ -42,7 +42,6 @@ def Bet():
 
 def Deal():
     cardNum=rand(1,52)
-    print(cardNum)
     cardVal = cardNum%13
     if cardVal == 0:
         cardVal = 13
