@@ -1,6 +1,8 @@
 from random import randint as rand
 from math import floor
 
+#Test
+
 deck = 52
 cardsPlayed = []
 players = []
